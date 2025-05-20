@@ -50,7 +50,13 @@ These are all easily installable via, e.g., `pip install numpy` (as in the
 sample installation session below). Any reasonably recent version of these
 packages should work.
 
+
+##### Download the TensorFlow Model Garden
+* https://github.com/tensorflow/models/tree/master
+* Place `vggish_to_timescale.py` file within `models/research/audioset/vggish`
+
 ##### VGGish also requires downloading two data files:
+* Place these within `models/research/audioset/vggish`
 
 * [VGGish model checkpoint](https://storage.googleapis.com/audioset/vggish_model.ckpt),
   in TensorFlow checkpoint format.
@@ -70,7 +76,7 @@ psql -U postgres -d audio_vectors -c "CREATE EXTENSION IF NOT EXISTS vector;"
 ```
 
 ### 3. Run the Embedding Generator
-
+* Run within `models/research/audioset/vggish`
 ```bash
 # Process a directory of audio files
 python vggish_to_timescaledb.py \ 
